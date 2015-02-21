@@ -10,6 +10,19 @@ import Foundation
 public struct Queue<T> {
 	
 	private var top: QueueNode<T>? = nil
+	
+	var count: Int {
+		if var node = top {
+			var c = 1
+			while node.next != nil {
+				node = node.next!
+				c++
+			}
+			return c
+		}
+		
+		return 0
+	}
 
 	mutating func enQueue(key: T) {
 		if var node = top {
@@ -23,6 +36,8 @@ public struct Queue<T> {
 	}
 	
 	mutating func deQueue() -> T? {
+		println(count)
+		
 		let prevTop = top
 		
 		top = top?.next
