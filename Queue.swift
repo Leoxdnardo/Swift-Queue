@@ -36,8 +36,6 @@ public struct Queue<T> {
 	}
 	
 	mutating func deQueue() -> T? {
-		println(count)
-		
 		let prevTop = top
 		
 		top = top?.next
@@ -46,7 +44,7 @@ public struct Queue<T> {
 	}
 	
 	func isEmpty() -> Bool {
-		return top?.key != nil
+		return top != nil
 	}
 	
 	func peek() -> T? {
