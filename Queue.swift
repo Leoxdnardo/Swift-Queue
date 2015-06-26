@@ -44,7 +44,7 @@ public struct Queue<T> {
 	}
 	
 	func isEmpty() -> Bool {
-		return top != nil
+		return top == nil
 	}
 	
 	func peek() -> T? {
